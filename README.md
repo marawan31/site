@@ -10,6 +10,7 @@ Django [AGPLv3](https://github.com/DMOJ/site/blob/master/LICENSE) contest judge 
 </a>
 </td>
 <td>
+This fork adds windows authentication using IIS and remote user, preventing signup and logout.  
 A modern online judge and contest platform system, supporting <b>IO-based</b>, <b>interactive</b>, and <b>signature-graded</b> tasks.
 </td>
 </tr>
