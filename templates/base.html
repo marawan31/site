@@ -206,7 +206,7 @@
                             <span>
                                 <img src="{{ gravatar(request.user, 32) }}" height="24" width="24">{# -#}
                                 <span>
-                                    {%- trans username=request.user.username -%}
+                                    {%- trans username=request.user.profile.name -%}
                                         Hello, <b>{{ username }}</b>.
                                     {%- endtrans %}
                                 </span>
@@ -219,13 +219,6 @@
                             <li><a href="{{ url('user_edit_profile') }}">{{ _('Edit profile') }}</a></li>
                             {% if request.user.is_impersonate %}
                                 <li><a href="{{ url('impersonate-stop') }}">Stop impersonating</a></li>
-                            {% else %}
-                                <li>
-                                    <form action="{{ url('auth_logout') }}" method="POST">
-                                        {% csrf_token %}
-                                        <button type="submit">{{ _('Log out') }}</button>
-                                    </form>
-                                </li>
                             {% endif %}
                         </ul>
                     </li>
@@ -234,7 +227,7 @@
                 <span class="anon">
                     <a href="{{ url('auth_login') }}?next={{ LOGIN_RETURN_PATH|urlencode }}">
                         <b>{{ _('Login') }}</b>
-                    </a>&nbsp;|&nbsp;<a href="{{ url('registration_register') }}">{{ _('Register') }}</a>
+                    </a>
                 </span>
             {% endif %}
         </span>

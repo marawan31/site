@@ -79,14 +79,14 @@ else:
                         'judge.ContestTag',
                     ],
                 },
-                {
-                    'model': 'auth.User',
-                    'icon': 'fa-user',
-                    'children': [
-                        'auth.Group',
-                        'registration.RegistrationProfile',
-                    ],
-                },
+                #{
+                #    'model': 'auth.User',
+                #    'icon': 'fa-user',
+                #    'children': [
+                #        'auth.Group',
+                #        'registration.RegistrationProfile',
+                #    ],
+                #},
                 {
                     'model': 'judge.Profile',
                     'icon': 'fa-user-plus',
@@ -128,7 +128,7 @@ INSTALLED_APPS += (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'registration',
+    #'registration',
     'mptt',
     'reversion',
     'django_social_share',
@@ -148,6 +148,7 @@ MIDDLEWARE = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'judge.middleware.CustomHeaderMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'judge.user_log.LogUserAccessMiddleware',
@@ -163,6 +164,7 @@ IMPERSONATE_REQUIRE_SUPERUSER = True
 IMPERSONATE_DISABLE_LOGGING = True
 
 ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_OPEN = False
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -352,6 +354,7 @@ CACHES = {}
 
 # Authentication
 AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.RemoteUserBackend',
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.dropbox.DropboxOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
