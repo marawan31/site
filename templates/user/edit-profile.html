@@ -142,13 +142,6 @@
                                        target="_blank" class="inline-header">{{ _('Change your avatar') }}</a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <a href="{{ url('password_change') }}" class="inline-header">
-                                        {{ _('Change your password') }}
-                                    </a>
-                                </td>
-                            </tr>
                         </table>
                     </td>
                     <td>
@@ -159,11 +152,6 @@
                     </td>
                 </tr>
             </table>
-
-            <hr>
-            <div class="block-header">{{ _('User-script') }}:</div>
-            {{ form.user_script }}
-            <hr>
 
             <input type="submit" style="float:right" value="{{ _('Update profile') }}">
         </form>
