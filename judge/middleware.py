@@ -1,6 +1,7 @@
 from django.contrib.auth.middleware import RemoteUserMiddleware
-from judge.models.profile import Profile
 from judge.models import Language
+from judge.models.auth.models import User
+from judge.models.profile import Profile
 
 class ContestMiddleware(object):
     def __init__(self, get_response):
@@ -21,7 +22,7 @@ class CustomHeaderMiddleware(RemoteUserMiddleware):
     header = 'HTTP_X_USER'
 
     def create_profile_if_not_exists(self, request):
-        if hasattr(request, 'user') and not hasattr(request.user, 'profile'):
+        if hasattr(request, 'user') and request.user is User and not hasattr(request.user, 'profile'):
             displayName = None
             if 'HTTP_X_USER_DISPLAYNAME' in request.META and 'HTTP_X_USER_EMAIL' in request.META:
                 displayName = request.META['HTTP_X_USER_DISPLAYNAME']
