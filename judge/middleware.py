@@ -1,6 +1,6 @@
 from django.contrib.auth.middleware import RemoteUserMiddleware
+from django.contrib.auth.models import User
 from judge.models import Language
-from judge.models.auth.models import User
 from judge.models.profile import Profile
 
 class ContestMiddleware(object):

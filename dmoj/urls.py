@@ -342,7 +342,7 @@ from django.views.generic import RedirectView
 
 for favicon in favicon_paths:
     urlpatterns.append(url(r'^%s$' % favicon, RedirectView.as_view(
-        url=lazystr(lambda: static('icons/' + favicon))
+        url=lazystr(static('icons/' + favicon))
     )))
 
 handler404 = 'judge.views.error.error404'
