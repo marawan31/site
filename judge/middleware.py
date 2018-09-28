@@ -27,14 +27,16 @@ class CustomHeaderMiddleware(RemoteUserMiddleware):
                 email = request.META['HTTP_X_USER_EMAIL']
                 request.user.email = email
                 request.user.save()
+            profile = None
             if not hasattr(request.user, 'profile'):
-                displayName = None
-                if 'HTTP_X_USER_DISPLAYNAME' in request.META:
-                    displayName = request.META['HTTP_X_USER_DISPLAYNAME']
-                else:
-                    displayName = request.user
-                profile = Profile(user=request.user, name=displayName)
+                profile = Profile(user=request.user)
                 profile.language = Language.objects.get(key='PY2')
+                profile.save()
+            else:
+                profile = request.user.profile
+            if profile.name == None and 'HTTP_X_USER_DISPLAYNAME' in request.META:
+                displayName = request.META['HTTP_X_USER_DISPLAYNAME']
+                profile.name = displayName
                 profile.save()
 
     def process_request(self, request):
