@@ -22,18 +22,20 @@ class CustomHeaderMiddleware(RemoteUserMiddleware):
     header = 'HTTP_X_USER'
 
     def create_profile_if_not_exists(self, request):
-        if hasattr(request, 'user') and request.user is User and not hasattr(request.user, 'profile'):
-            displayName = None
-            if 'HTTP_X_USER_DISPLAYNAME' in request.META and 'HTTP_X_USER_EMAIL' in request.META:
-                displayName = request.META['HTTP_X_USER_DISPLAYNAME']
+        if hasattr(request, 'user') and request.user is User:
+            if not hasattr(request.user, 'email') and 'HTTP_X_USER_EMAIL' in request.META :
                 email = request.META['HTTP_X_USER_EMAIL']
                 request.user.email = email
                 request.user.save()
-            else:
-                displayName = request.user
-            profile = Profile(user=request.user, name=displayName)
-            profile.language = Language.objects.get(key='PY2')
-            profile.save()
+            if not hasattr(request.user, 'profile'):
+                displayName = None
+                if 'HTTP_X_USER_DISPLAYNAME' in request.META:
+                    displayName = request.META['HTTP_X_USER_DISPLAYNAME']
+                else:
+                    displayName = request.user
+                profile = Profile(user=request.user, name=displayName)
+                profile.language = Language.objects.get(key='PY2')
+                profile.save()
 
     def process_request(self, request):
         super(CustomHeaderMiddleware, self).process_request(request)
