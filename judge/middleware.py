@@ -23,7 +23,7 @@ class CustomHeaderMiddleware(RemoteUserMiddleware):
 
     def create_profile_if_not_exists(self, request):
         if hasattr(request, 'user') and request.user is User:
-            if not hasattr(request.user, 'email') and 'HTTP_X_USER_EMAIL' in request.META :
+            if not hasattr(request.user, 'email') and 'HTTP_X_USER_EMAIL' in request.META:
                 email = request.META['HTTP_X_USER_EMAIL']
                 request.user.email = email
                 request.user.save()
