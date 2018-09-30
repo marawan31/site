@@ -4,6 +4,7 @@
 *.py[co]
 *.mo
 *~
+websocket/
 bridge_log
 dmojsite
 dmoj/local_settings.py

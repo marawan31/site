@@ -23,7 +23,7 @@ from judge.views.select2 import UserSelect2View, OrganizationSelect2View, Proble
 
 admin.autodiscover()
 
-#register_patterns = [
+register_patterns = [
 #    url(r'^activate/complete/$',
 #        TitledTemplateView.as_view(template_name='registration/activation_complete.html',
 #                                   title='Activation Successful!'),
@@ -46,11 +46,11 @@ admin.autodiscover()
 #        TitledTemplateView.as_view(template_name='registration/registration_closed.html',
 #                                   title='Registration not allowed'),
 #        name='registration_disallowed'),
-#    url(r'^login/$', auth_views.LoginView.as_view(
-#        template_name='registration/login.html',
-#        extra_context={'title': _('Login')},
-#        authentication_form=CustomAuthenticationForm,
-#    ), name='auth_login'),
+    url(r'^login/$', auth_views.LoginView.as_view(
+        template_name='registration/login.html',
+        extra_context={'title': _('Login')},
+        authentication_form=CustomAuthenticationForm,
+    ), name='auth_login')
 #    url(r'^logout/$', user.UserLogoutView.as_view(), name='auth_logout'),
 #    url(r'^password/change/$', auth_views.PasswordChangeView.as_view(
 #        template_name='registration/password_change_form.html'
@@ -74,7 +74,7 @@ admin.autodiscover()
 #        template_name='registration/password_reset_done.html',
 #    ), name='password_reset_done'),
 #    url(r'^social/error/$', register.social_auth_error, name='social_auth_error'),
-#]
+]
 
 
 def exception(request):
@@ -93,7 +93,7 @@ urlpatterns = [
     url(r'^500/$', exception),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^i18n/', include('django.conf.urls.i18n')),
-    #url(r'^accounts/', include(register_patterns)),
+    url(r'^accounts/', include(register_patterns)),
     url(r'^', include(social_auth_patterns, namespace='social')),
 
     url(r'^problems/$', problem.ProblemList.as_view(), name='problem_list'),
