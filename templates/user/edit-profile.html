@@ -87,11 +87,6 @@
 
             {% csrf_token %}
 
-            <div style="padding-top:0.5em">
-                <label class="inline-header grayed">{{ _('Display name') }}:</label>
-                <span class="fullwidth">{{ form.name }}</span>
-            </div>
-
             <div style="padding-top:1em" class="block-header">{{ _('Self-description') }}:</div>
             {{ form.about }}
             <hr>
@@ -112,12 +107,6 @@
                                 <td><label class="inline-header grayed">{{ _('Editor theme') }}:</label></td>
                                 <td><span class="fullwidth">{{ form.ace_theme }}</span></td>
                             </tr>
-                            {% if has_math_config %}
-                                <tr>
-                                    <td><label class="inline-header grayed">{{ _('Math engine') }}:</label></td>
-                                    <td><span class="fullwidth">{{ form.math_engine }}</span></td>
-                                </tr>
-                            {% endif %}
                             {% if form.newsletter %}
                                 <tr>
                                     <td colspan="2">
