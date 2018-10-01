@@ -513,7 +513,7 @@ def get_contest_ranking_list(request, contest, participation=None, ranking_list=
                 participation = None
         if participation is not None and participation.virtual:
             users = chain([('-', get_participation_ranking_profile(contest, participation, problems))], users)
-    return users, problems
+    return users[:3], problems
 
 
 def contest_ranking_ajax(request, contest, participation=None):

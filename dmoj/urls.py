@@ -147,10 +147,10 @@ urlpatterns = [
     url(r'^edit/profile/$', user.edit_profile, name='user_edit_profile'),
     url(r'^user/(?P<user>\w+)', include([
         url(r'^$', user.UserAboutPage.as_view(), name='user_page'),
-        url(r'^/solved', include([
-            url(r'^$', user.UserProblemsPage.as_view(), name='user_problems'),
-            url(r'/ajax$', user.UserPerformancePointsAjax.as_view(), name='user_pp_ajax'),
-        ])),
+        #url(r'^/solved', include([
+        #    url(r'^$', user.UserProblemsPage.as_view(), name='user_problems'),
+        #    url(r'/ajax$', user.UserPerformancePointsAjax.as_view(), name='user_pp_ajax'),
+        #])),
         url(r'^/submissions/', paged_list_view(submission.AllUserSubmissions, 'all_user_submissions_old')),
         url(r'^/submissions/', lambda _, user: HttpResponsePermanentRedirect(reverse('all_user_submissions', args=[user]))),
 
@@ -222,18 +222,18 @@ urlpatterns = [
     url(r'^runtimes/matrix/$', status.version_matrix, name='version_matrix'),
     url(r'^status/$', status.status_all, name='status_all'),
 
-    url(r'^api/', include([
-        url(r'^contest/list$', api.api_v1_contest_list),
-        url(r'^contest/info/(\w+)$', api.api_v1_contest_detail),
-        url(r'^problem/list$', api.api_v1_problem_list),
-        url(r'^problem/info/(\w+)$', api.api_v1_problem_info),
-        url(r'^user/list$', api.api_v1_user_list),
-        url(r'^user/info/(\w+)$', api.api_v1_user_info),
-        url(r'^user/submissions/(\w+)$', api.api_v1_user_submissions),
-        url(r'^v2/', include([
-            url(r'user-info$', api.api_v2_user_info),
-        ])),
-    ])),
+    #url(r'^api/', include([
+    #    url(r'^contest/list$', api.api_v1_contest_list),
+    #    url(r'^contest/info/(\w+)$', api.api_v1_contest_detail),
+    #    url(r'^problem/list$', api.api_v1_problem_list),
+    #    url(r'^problem/info/(\w+)$', api.api_v1_problem_info),
+    #    url(r'^user/list$', api.api_v1_user_list),
+    #    url(r'^user/info/(\w+)$', api.api_v1_user_info),
+    #    url(r'^user/submissions/(\w+)$', api.api_v1_user_submissions),
+    #    url(r'^v2/', include([
+    #        url(r'user-info$', api.api_v2_user_info),
+    #    ])),
+    #])),
 
     url(r'^blog/', paged_list_view(blog.PostList, 'blog_post_list')),
     url(r'^post/(?P<id>\d+)-(?P<slug>.*)$', blog.PostView.as_view(), name='blog_post'),
