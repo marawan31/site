@@ -10,7 +10,7 @@ class ContestMiddleware(object):
         self.get_response = get_response
 
     def __call__(self, request):
-        if request.user.is_authenticated:
+        if request.user.is_authenticated and hasattr(request.user, 'profile'):
             profile = request.user.profile
             profile.update_contest()
             request.participation = profile.current_contest
