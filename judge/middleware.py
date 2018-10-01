@@ -2,6 +2,8 @@ from django.contrib.auth.middleware import RemoteUserMiddleware
 from django.contrib.auth.models import User
 from judge.models import Language
 from judge.models.profile import Profile
+from judge.models.profile import Organization
+from django.conf import settings
 
 class ContestMiddleware(object):
     def __init__(self, get_response):
@@ -31,6 +33,15 @@ class CustomHeaderMiddleware(RemoteUserMiddleware):
             if not hasattr(request.user, 'profile'):
                 profile = Profile(user=request.user)
                 profile.language = Language.objects.get(key='PY2')
+                default_org_id = getattr(settings, 'DEFAULT_LOGIN_ORGANIZATION', 'default')
+                org = None                
+                try:
+                    org = Organization.objects.get(key=default_org_id)
+                except:
+                    pass
+                    
+                if org:
+                    profile.organizations.add(org)                
                 requiresSave = True
             else:
                 profile = request.user.profile
