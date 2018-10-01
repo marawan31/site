@@ -34,14 +34,15 @@ class CustomHeaderMiddleware(RemoteUserMiddleware):
                 profile = Profile(user=request.user)
                 profile.language = Language.objects.get(key='PY2')
                 default_org_id = getattr(settings, 'DEFAULT_LOGIN_ORGANIZATION', 'default')
-                org = None                
+                org = None
                 try:
                     org = Organization.objects.get(key=default_org_id)
                 except:
                     pass
-                    
+
                 if org:
-                    profile.organizations.add(org)                
+                    profile.save()
+                    profile.organizations.add(org)
                 requiresSave = True
             else:
                 profile = request.user.profile
