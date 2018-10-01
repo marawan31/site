@@ -23,11 +23,12 @@ class ContestMiddleware(object):
 class CustomHeaderMiddleware(RemoteUserMiddleware):
     header = 'HTTP_X_USER'
     def create_profile_if_not_exists(self, request):
-        if hasattr(request, 'user') and type(request.user) is User:
-            if not hasattr(request.user, 'email') and 'HTTP_X_USER_EMAIL' in request.META:
+        if hasattr(request, 'user') and request.user.is_authenticated:
+            if (not hasattr(request.user, 'email') or not request.user.email) and 'HTTP_X_USER_EMAIL' in request.META:
                 email = request.META['HTTP_X_USER_EMAIL']
                 request.user.email = email
                 request.user.save()
+
             profile = None
             requiresSave = False
             if not hasattr(request.user, 'profile'):
