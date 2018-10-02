@@ -259,7 +259,7 @@ class UserList(QueryStringSortMixin, DiggPaginatorMixin, TitleMixin, ListView):
     paginate_by = 100
     all_sorts = frozenset(('name', 'points', 'problem_count', 'rating', 'performance_points'))
     default_desc = all_sorts
-    default_sort = '-name'
+    default_sort = 'name'
 
     def get_queryset(self):
         return (Profile.objects.order_by(self.order, 'id').select_related('user')
