@@ -515,7 +515,13 @@ def get_contest_ranking_list(request, contest, participation=None, ranking_list=
         if participation is not None and participation.virtual:
             users = chain([('-', get_participation_ranking_profile(contest, participation, problems))], users)
         if not request.user.is_authenticated or not request.user.is_superuser:
-            users = islice(users, 5)
+            usersCount = 0
+            def users_filter(user_tuple):
+                usersCount = usersCount + 1
+                if user_tuple[1].user == request.user:
+                    return True
+                return usersCount =< 5            
+            users = ifilter(users_filter, users)
     return users, problems
 
 

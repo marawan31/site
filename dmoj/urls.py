@@ -140,7 +140,7 @@ urlpatterns = [
         url(r'^$', user.users, name='user_list'),
         url(r'^(?P<page>\d+)$', lambda request, page:
         HttpResponsePermanentRedirect('%s?page=%s' % (reverse('user_list'), page))),
-        url(r'^find$', user.user_ranking_redirect, name='user_ranking_redirect'),
+        #url(r'^find$', user.user_ranking_redirect, name='user_ranking_redirect'),
     ])),
 
     url(r'^user$', user.UserAboutPage.as_view(), name='user_page'),
