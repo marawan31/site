@@ -257,13 +257,14 @@ class UserList(QueryStringSortMixin, DiggPaginatorMixin, TitleMixin, ListView):
     context_object_name = 'users'
     template_name = 'user/list.html'
     paginate_by = 100
-    all_sorts = frozenset(('name', 'problem_count'))
+    all_sorts = frozenset(('name', 'points', 'problem_count', 'rating', 'performance_points'))
     default_desc = all_sorts
     default_sort = 'name'
 
     def get_queryset(self):
         return (Profile.objects.order_by(self.order, 'id').select_related('user')
-                .only('user__username', 'name', 'problem_count'))
+                .only('display_rank', 'user__username', 'name', 'points', 'rating', 'performance_points',
+                      'problem_count'))
 
     def get_context_data(self, **kwargs):
         context = super(UserList, self).get_context_data(**kwargs)
