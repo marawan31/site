@@ -520,7 +520,7 @@ def get_contest_ranking_list(request, contest, participation=None, ranking_list=
                 usersCount = usersCount + 1
                 if user_tuple[1].user == request.user:
                     return True
-                return usersCount =< 5            
+                return usersCount <= 5            
             users = ifilter(users_filter, users)
     return users, problems
 

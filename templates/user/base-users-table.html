@@ -1,11 +1,11 @@
 <thead>
 <tr>
-    {% if request.user.is_authenticated and request.user.profile.current_contest is not None %}
+    {% if request.in_contest %}
         <th class="header rank">{{ rank_header or _("Rank") }}</th>
         {% block after_rank_head %}{% endblock %}
     {% endif %}
     <th class="header username">{{ _('Username') }}</th>
-    {% if request.user.is_authenticated and request.user.profile.current_contest is not None %}
+    {% if request.in_contest %}
         {% block before_point_head %}{% endblock %}
          <th class="header points">
             {% if sort_links %}<a href="{{ sort_links.performance_points }}">{% endif %}
@@ -19,12 +19,12 @@
  <tbody>
 {% for rank, user in users %}
     <tr id="user-{{ user.user.username }}">
-        {% if request.user.is_authenticated and request.user.profile.current_contest is not None %}
+        {% if request.in_contest %}
             <td>{{ rank }}</td>
             {% block after_rank scoped %}{% endblock %}
         {% endif %}
         <td class="user-name">{{ link_user(user) }}</td>
-        {% if request.user.is_authenticated and request.user.profile.current_contest is not None %}
+        {% if request.in_contest %}
             {% block before_point scoped %}{% endblock %}
             {% block point scoped %}
                 <td title="{{ user.performance_points|floatformat(2) }}" class="user-points">
