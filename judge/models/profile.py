@@ -108,7 +108,7 @@ class Profile(models.Model):
         points = sum(data)
         problems = len(data)
         entries = min(len(data), len(table))
-        pp = sum(map(mul, table[:entries], data[:entries])) + bonus_function(extradata)
+        pp = points
         if self.points != points or problems != self.problem_count or self.performance_points != pp:
             self.points = points
             self.problem_count = problems
