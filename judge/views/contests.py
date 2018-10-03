@@ -2,6 +2,7 @@ from calendar import Calendar, SUNDAY
 from collections import namedtuple, defaultdict
 from functools import partial
 from itertools import chain
+from itertools import islice
 from operator import attrgetter
 
 from datetime import timedelta, date, datetime, time
@@ -514,7 +515,7 @@ def get_contest_ranking_list(request, contest, participation=None, ranking_list=
         if participation is not None and participation.virtual:
             users = chain([('-', get_participation_ranking_profile(contest, participation, problems))], users)
         if not request.user.is_authenticated or not request.user.is_superuser:
-            users = users[:3]
+            users = islice(users, 5)
     return users, problems
 
 
