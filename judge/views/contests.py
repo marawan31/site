@@ -596,7 +596,10 @@ def base_participation_list(request, contest, profile):
 
     req_username = request.user.username if request.user.is_authenticated else None
     prof_username = profile.user.username
-    in_contest = (contest == request.user.profile.current_contest) if request.user.is_authenticated else False
+
+    in_contest = False
+    if request.user.is_authenticated and request.user.profile.current_contest is not None:
+        in_contest = (request.user.profile.current_contest.contest == contest)
 
     queryset = contest.users.filter(user=profile, virtual__gte=0).order_by('-virtual')
     live_link = format_html(u'<a href="{2}#!{1}">{0}</a>', _('Live'), prof_username,

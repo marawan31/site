@@ -1,0 +1,98 @@
+(1, ContestRankingProfile(id=18L, user=<User: testuser3>, display_rank=u'user', long_display_name=u'testuser3 (testuser3)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser3 (testuser3) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=17L, user=<User: testuser2>, display_rank=u'user', long_display_name=u'testuser2 (testuser2)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser2 (testuser2) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=19L, user=<User: testuser4>, display_rank=u'user', long_display_name=u'testuser4 (testuser4)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser4 (testuser4) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=16L, user=<User: testuser1>, display_rank=u'user', long_display_name=u'testuser1 (testuser1)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser1 (testuser1) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=21L, user=<User: testuser6>, display_rank=u'user', long_display_name=u'testuser6 (testuser6)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser6 (testuser6) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=20L, user=<User: testuser5>, display_rank=u'user', long_display_name=u'testuser5 (testuser5)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser5 (testuser5) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+
+
+(1, ContestRankingProfile(id=18L, user=<User: testuser3>, display_rank=u'user', long_display_name=u'testuser3 (testuser3)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser3 (testuser3) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=17L, user=<User: testuser2>, display_rank=u'user', long_display_name=u'testuser2 (testuser2)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser2 (testuser2) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=19L, user=<User: testuser4>, display_rank=u'user', long_display_name=u'testuser4 (testuser4)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser4 (testuser4) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=16L, user=<User: testuser1>, display_rank=u'user', long_display_name=u'testuser1 (testuser1)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser1 (testuser1) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=21L, user=<User: testuser6>, display_rank=u'user', long_display_name=u'testuser6 (testuser6)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser6 (testuser6) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=20L, user=<User: testuser5>, display_rank=u'user', long_display_name=u'testuser5 (testuser5)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser5 (testuser5) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+
+
+(1, ContestRankingProfile(id=18L, user=<User: testuser3>, display_rank=u'user', long_display_name=u'testuser3 (testuser3)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser3 (testuser3) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=17L, user=<User: testuser2>, display_rank=u'user', long_display_name=u'testuser2 (testuser2)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser2 (testuser2) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=19L, user=<User: testuser4>, display_rank=u'user', long_display_name=u'testuser4 (testuser4)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser4 (testuser4) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=16L, user=<User: testuser1>, display_rank=u'user', long_display_name=u'testuser1 (testuser1)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser1 (testuser1) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=21L, user=<User: testuser6>, display_rank=u'user', long_display_name=u'testuser6 (testuser6)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser6 (testuser6) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=20L, user=<User: testuser5>, display_rank=u'user', long_display_name=u'testuser5 (testuser5)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser5 (testuser5) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+
+
+(1, ContestRankingProfile(id=18L, user=<User: testuser3>, display_rank=u'user', long_display_name=u'testuser3 (testuser3)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser3 (testuser3) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=17L, user=<User: testuser2>, display_rank=u'user', long_display_name=u'testuser2 (testuser2)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser2 (testuser2) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=19L, user=<User: testuser4>, display_rank=u'user', long_display_name=u'testuser4 (testuser4)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser4 (testuser4) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=16L, user=<User: testuser1>, display_rank=u'user', long_display_name=u'testuser1 (testuser1)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser1 (testuser1) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=21L, user=<User: testuser6>, display_rank=u'user', long_display_name=u'testuser6 (testuser6)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser6 (testuser6) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=20L, user=<User: testuser5>, display_rank=u'user', long_display_name=u'testuser5 (testuser5)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser5 (testuser5) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+
+
+(1, ContestRankingProfile(id=18L, user=<User: testuser3>, display_rank=u'user', long_display_name=u'testuser3 (testuser3)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser3 (testuser3) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=17L, user=<User: testuser2>, display_rank=u'user', long_display_name=u'testuser2 (testuser2)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser2 (testuser2) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=19L, user=<User: testuser4>, display_rank=u'user', long_display_name=u'testuser4 (testuser4)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser4 (testuser4) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=16L, user=<User: testuser1>, display_rank=u'user', long_display_name=u'testuser1 (testuser1)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser1 (testuser1) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=21L, user=<User: testuser6>, display_rank=u'user', long_display_name=u'testuser6 (testuser6)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser6 (testuser6) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=20L, user=<User: testuser5>, display_rank=u'user', long_display_name=u'testuser5 (testuser5)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser5 (testuser5) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+
+
+(1, ContestRankingProfile(id=18L, user=<User: testuser3>, display_rank=u'user', long_display_name=u'testuser3 (testuser3)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser3 (testuser3) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=17L, user=<User: testuser2>, display_rank=u'user', long_display_name=u'testuser2 (testuser2)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser2 (testuser2) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=19L, user=<User: testuser4>, display_rank=u'user', long_display_name=u'testuser4 (testuser4)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser4 (testuser4) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=16L, user=<User: testuser1>, display_rank=u'user', long_display_name=u'testuser1 (testuser1)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser1 (testuser1) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=21L, user=<User: testuser6>, display_rank=u'user', long_display_name=u'testuser6 (testuser6)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser6 (testuser6) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=20L, user=<User: testuser5>, display_rank=u'user', long_display_name=u'testuser5 (testuser5)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser5 (testuser5) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+
+
+(1, ContestRankingProfile(id=18L, user=<User: testuser3>, display_rank=u'user', long_display_name=u'testuser3 (testuser3)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser3 (testuser3) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=17L, user=<User: testuser2>, display_rank=u'user', long_display_name=u'testuser2 (testuser2)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser2 (testuser2) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=19L, user=<User: testuser4>, display_rank=u'user', long_display_name=u'testuser4 (testuser4)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser4 (testuser4) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=16L, user=<User: testuser1>, display_rank=u'user', long_display_name=u'testuser1 (testuser1)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser1 (testuser1) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=21L, user=<User: testuser6>, display_rank=u'user', long_display_name=u'testuser6 (testuser6)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser6 (testuser6) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+(1, ContestRankingProfile(id=20L, user=<User: testuser5>, display_rank=u'user', long_display_name=u'testuser5 (testuser5)', points=0L, cumtime=0L, problems=[None], rating=None, organization=<Organization: GIC: Genetec Integration Challenges>, participation=<ContestParticipation: testuser5 (testuser5) in Test Contest>, participation_rating=None))
+<type 'tuple'>
+
+
