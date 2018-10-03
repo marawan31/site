@@ -9,9 +9,6 @@
         {% else %}
             {{ make_tab('ranking', 'fa-bar-chart', None, _('Hidden Rankings')) }}
         {% endif %}
-        {% if contest.show_scoreboard and request.user.is_authenticated %}
-            {{ make_tab('participation', 'fa-users', url('contest_participation_own', contest.key), _('Participation')) }}
-        {% endif %}
     {% endif %}
     {% if perms.judge.change_contest %}
         {{ make_tab('edit', 'fa-edit', url('admin:judge_contest_change', contest.id), _('Edit')) }}
