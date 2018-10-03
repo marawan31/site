@@ -140,17 +140,17 @@ urlpatterns = [
         url(r'^$', user.users, name='user_list'),
         url(r'^(?P<page>\d+)$', lambda request, page:
         HttpResponsePermanentRedirect('%s?page=%s' % (reverse('user_list'), page))),
-        #url(r'^find$', user.user_ranking_redirect, name='user_ranking_redirect'),
+        url(r'^find$', user.user_ranking_redirect, name='user_ranking_redirect'),
     ])),
 
     url(r'^user$', user.UserAboutPage.as_view(), name='user_page'),
     url(r'^edit/profile/$', user.edit_profile, name='user_edit_profile'),
     url(r'^user/(?P<user>\w+)', include([
         url(r'^$', user.UserAboutPage.as_view(), name='user_page'),
-        #url(r'^/solved', include([
-        #    url(r'^$', user.UserProblemsPage.as_view(), name='user_problems'),
-        #    url(r'/ajax$', user.UserPerformancePointsAjax.as_view(), name='user_pp_ajax'),
-        #])),
+        url(r'^/solved', include([
+            url(r'^$', user.UserProblemsPage.as_view(), name='user_problems'),
+            url(r'/ajax$', user.UserPerformancePointsAjax.as_view(), name='user_pp_ajax'),
+        ])),
         url(r'^/submissions/', paged_list_view(submission.AllUserSubmissions, 'all_user_submissions_old')),
         url(r'^/submissions/', lambda _, user: HttpResponsePermanentRedirect(reverse('all_user_submissions', args=[user]))),
 
