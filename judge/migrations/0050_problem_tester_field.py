@@ -26,6 +26,11 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterField(
             model_name='problemdata',
+            name='custom_judge',
+            field=models.FileField(blank=True, null=True, storage=judge.utils.problem_data.ProblemDataStorage(), upload_to=judge.models.problem_directory_file, verbose_name='custom judge file'),
+        ),
+        migrations.AlterField(
+            model_name='problemdata',
             name='zipfile',
             field=models.FileField(blank=True, null=True, storage=judge.utils.problem_data.ProblemDataStorage(), upload_to=judge.models.problem_directory_file, verbose_name='data zip file'),
         ),

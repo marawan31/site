@@ -53,6 +53,7 @@ class ProblemDataCompiler(object):
         self.files = files
 
         self.generator = data.generator
+        self.custom_judge = data.custom_judge
 
     def make_init(self):
         cases = []
@@ -159,6 +160,12 @@ class ProblemDataCompiler(object):
             if len(generator_path) != 2:
                 raise ProblemDataError(_('How did you corrupt the generator path?'))
             init['generator'] = generator_path[1]
+
+        if self.custom_judge:
+            custom_judge_path = split_path_first(self.custom_judge.name)
+            if len(generator_path) != 2:
+                raise ProblemDataError(_('How did you corrupt the custom_judge path?'))
+            init['custom_judge'] = custom_judge_path[1]
 
         pretests = [case for case in cases if case['is_pretest']]
         for case in cases:
