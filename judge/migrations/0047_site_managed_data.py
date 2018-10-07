@@ -21,7 +21,6 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('zipfile', models.FileField(blank=True, null=True, upload_to=judge.models.problem_directory_file, verbose_name='data zip file')),
                 ('generator', models.FileField(blank=True, null=True, upload_to=judge.models.problem_directory_file, verbose_name='generator file')),
-                ('custom_judge', models.FileField(blank=True, null=True, upload_to=judge.models.problem_directory_file, verbose_name='custom judge file')),
                 ('output_prefix', models.IntegerField(blank=True, null=True, verbose_name='output prefix length')),
                 ('output_limit', models.IntegerField(blank=True, null=True, verbose_name='output limit length')),
                 ('feedback', models.TextField(blank=True, verbose_name='init.yml generation feedback')),
