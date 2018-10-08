@@ -19,7 +19,7 @@ else:
 
 class ProblemDataStorage(FileSystemStorage):
     def __init__(self):
-        super(ProblemDataStorage, self).__init__(getattr(settings, 'PROBLEM_DATA_ROOT', None), file_permissions_mode=644)
+        super(ProblemDataStorage, self).__init__(getattr(settings, 'PROBLEM_DATA_ROOT', None), file_permissions_mode=0o644)
 
     def url(self, name):
         path = split_path_first(name)
