@@ -163,7 +163,7 @@ class ProblemDataCompiler(object):
 
         if self.custom_judge:
             custom_judge_path = split_path_first(self.custom_judge.name)
-            if len(generator_path) != 2:
+            if len(custom_judge_path) != 2:
                 raise ProblemDataError(_('How did you corrupt the custom_judge path?'))
             init['custom_judge'] = custom_judge_path[1]
 
