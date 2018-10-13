@@ -127,14 +127,13 @@ class DjangoJudgeHandler(JudgeHandler):
             ).get()
             self._submission_cache_id = id
 
-        if data['problem__is_public']:
-            event.post('submissions', {
-                'type': 'done-submission' if done else 'update-submission',
-                'state': state, 'id': id,
-                'contest': data['contest__participation__contest__key'],
-                'user': data['user_id'], 'problem': data['problem_id'],
-                'status': data['status'], 'language': data['language__key'],
-            })
+        event.post('submissions', {
+            'type': 'done-submission' if done else 'update-submission',
+            'state': state, 'id': id,
+            'contest': data['contest__participation__contest__key'],
+            'user': data['user_id'], 'problem': data['problem_id'],
+            'status': data['status'], 'language': data['language__key'],
+        })
 
     def on_submission_processing(self, packet):
         id = packet['submission-id']
