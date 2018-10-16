@@ -22,6 +22,12 @@
             {% else %}
                 window.show_problem = 0;
             {% endif %}
+            
+            {% if request.user.is_superuser %}
+                window.super_user = 1;
+            {% else %}
+                window.super_user = 0;
+            {% endif %}
         </script>
     {% endif %}
 
@@ -143,7 +149,7 @@
                 var receiver = new EventReceiver(
                     "{{ EVENT_DAEMON_LOCATION }}", "{{ EVENT_DAEMON_POLL_LOCATION }}",
                     ['submissions'], last_msg, function (message) {
-                        if ((current_contest && message.contest != current_contest) || (!current_contest && message.contest))
+                        if (!super_user && ((current_contest && message.contest != current_contest) || (!current_contest && message.contest)))
                             return;
                         if (dynamic_user_id && message.user != dynamic_user_id ||
                             dynamic_problem_id && message.problem != dynamic_problem_id)
