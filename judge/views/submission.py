@@ -308,7 +308,7 @@ class ProblemSubmissionsBase(SubmissionsListBase):
     dynamic_update = True
 
     def get_queryset(self):
-        if self.in_contest and not self.contest.contest_problems.filter(problem_id=self.problem.id).exists() and not self.problem.is_public:
+        if self.in_contest and not self.contest.contest_problems.filter(problem_id=self.problem.id).exists():
             raise Http404()
         return super(ProblemSubmissionsBase, self)._get_queryset().filter(problem_id=self.problem.id)
 
