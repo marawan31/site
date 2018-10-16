@@ -143,7 +143,7 @@
                 var receiver = new EventReceiver(
                     "{{ EVENT_DAEMON_LOCATION }}", "{{ EVENT_DAEMON_POLL_LOCATION }}",
                     ['submissions'], last_msg, function (message) {
-                        if (current_contest && message.contest != current_contest)
+                        if ((current_contest && message.contest != current_contest) || (!current_contest && message.contest))
                             return;
                         if (dynamic_user_id && message.user != dynamic_user_id ||
                             dynamic_problem_id && message.problem != dynamic_problem_id)
