@@ -16,7 +16,7 @@ class RankedSubmissions(ProblemSubmissions):
     dynamic_update = False
 
     def get_queryset(self):
-        if self.in_contest:
+        if self.in_contest and not self.problem.is_public:
             contest_join = '''INNER JOIN judge_contestsubmission AS cs ON (sub.id = cs.submission_id)
                               INNER JOIN judge_contestparticipation AS cp ON (cs.participation_id = cp.id)'''
             points = 'cs.points'
@@ -50,7 +50,7 @@ class RankedSubmissions(ProblemSubmissions):
                 output_field=IntegerField()))
         queryset.query.group_by = ['user_id']
 
-        if self.in_contest:
+        if self.in_contest and not self.problem.is_public:
             return queryset.order_by('-contest__points', 'time')
         else:
             return queryset.order_by('-points', 'time')
