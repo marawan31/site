@@ -200,6 +200,29 @@ class SubmissionsListBase(DiggPaginatorMixin, TitleMixin, ListView):
 
         return queryset
 
+    def _get_queryset_for_problem(self, id_of_problem):
+        queryset = Submission.objects.all()
+        use_straight_join(queryset)
+        queryset = submission_related(queryset.order_by('-id'))
+        if self.show_problem:
+            queryset = queryset.prefetch_related(Prefetch('problem__translations',
+                                                          queryset=ProblemTranslation.objects.filter(
+                                                              language=self.request.LANGUAGE_CODE), to_attr='_trans'))
+        queryset = queryset.select_related('contest__participation__contest') \
+            .defer('contest__participation__contest__description')
+
+            # This is not technically correct since contest organizers *should* see these, but
+            # the join would be far too messy
+        if not self.request.user.has_perm('judge.see_private_contest'):
+            queryset = queryset.exclude(contest__participation__contest__hide_scoreboard=True)
+
+        if self.selected_languages:
+            queryset = queryset.filter(language_id__in=Language.objects.filter(key__in=self.selected_languages))
+        if self.selected_statuses:
+            queryset = queryset.filter(result__in=self.selected_statuses)
+
+        return queryset.filter(problem_id=id_of_problem)
+
     def get_queryset(self):
         queryset = self._get_queryset()
         if not self.in_contest and not self.request.user.has_perm('judge.see_private_problem'):
@@ -309,6 +332,8 @@ class ProblemSubmissionsBase(SubmissionsListBase):
 
     def get_queryset(self):
         if self.in_contest and not self.contest.contest_problems.filter(problem_id=self.problem.id).exists():
+            if self.problem.is_public:
+                return super(ProblemSubmissionsBase, self)._get_queryset_for_problem(self.problem.id)
             raise Http404()
         return super(ProblemSubmissionsBase, self)._get_queryset().filter(problem_id=self.problem.id)
 
