@@ -179,6 +179,12 @@ class SubmissionsListBase(DiggPaginatorMixin, TitleMixin, ListView):
             queryset = queryset.prefetch_related(Prefetch('problem__translations',
                                                           queryset=ProblemTranslation.objects.filter(
                                                               language=self.request.LANGUAGE_CODE), to_attr='_trans'))
+
+        if self.selected_languages:
+            queryset = queryset.filter(language_id__in=Language.objects.filter(key__in=self.selected_languages))
+        if self.selected_statuses:
+            queryset = queryset.filter(result__in=self.selected_statuses)
+
         if self.in_contest:
             queryset = queryset.filter(contest__participation__contest_id=self.contest.id)
             if self.contest.hide_scoreboard and self.contest.is_in_contest(self.request):
@@ -192,11 +198,6 @@ class SubmissionsListBase(DiggPaginatorMixin, TitleMixin, ListView):
             # the join would be far too messy
             if not self.request.user.has_perm('judge.see_private_contest'):
                 queryset = queryset.exclude(contest__participation__contest__hide_scoreboard=True)
-
-        if self.selected_languages:
-            queryset = queryset.filter(language_id__in=Language.objects.filter(key__in=self.selected_languages))
-        if self.selected_statuses:
-            queryset = queryset.filter(result__in=self.selected_statuses)
 
         return queryset
 
